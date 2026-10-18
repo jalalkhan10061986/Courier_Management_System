@@ -4,7 +4,7 @@
 
 It features an indigo sidebar with violet, teal, coral and blue accent cards, a light/dark theme toggle, and a layout that works on desktop and mobile.
 
-> 📸 **Screenshot:** add one here, e.g. `![Parcelo dashboard](docs/screenshot.png)`
+> 📸 **Demo:** https://jalalkhan10061986.github.io/Courier_Management_System
 
 ---
 
