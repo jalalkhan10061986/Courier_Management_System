@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Parcelo – Courier management</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<aside id="side"><button class="burger" id="burger" aria-label="Menu">☰</button><nav id="nav"></nav></aside>
+<div>
+<header>
+<button class="ico mb" id="mb" aria-label="Open menu">☰</button>
+<span class="logo">Parcelo</span>
+<label class="search"><input id="q" placeholder="Search shipments…" aria-label="Search shipments"><span>⌕</span></label>
+<span class="sp"></span>
+<button class="ico" id="theme" aria-label="Toggle theme">◐</button>
+<span class="ico" title="Active shipments">✉<b id="bA">0</b></span>
+<div class="me"><div class="av">AK</div><div><strong>Amir Khan</strong><small>Dispatcher</small></div></div>
+</header>
+<main id="view"></main>
+</div>
+</div>
+
+<dialog id="dlg">
+<h2 style="margin:0 0 6px">New shipment</h2>
+<label for="fS">Sender</label><input id="fS">
+<label for="fR">Receiver</label><input id="fR">
+<label for="fC">Destination city</label><input id="fC">
+<label for="fK">Courier</label><select id="fK"></select>
+<div style="display:flex;gap:10px;justify-content:flex-end;margin-top:18px">
+<button class="btn alt" id="fX">Cancel</button><button class="btn" id="fOk">Create shipment</button></div>
+</dialog>
+<div class="toast" id="toast"></div>
+
+<script type="application/json" id="seed">
+{"couriers":[
+{"id":"C1","name":"Hamza Ali","zone":"North","phone":"+44 20 5550 101","active":true},
+{"id":"C2","name":"Lena Fischer","zone":"Central","phone":"+49 30 5550 102","active":true},
+{"id":"C3","name":"Omar Haddad","zone":"Gulf","phone":"+971 4 555 0103","active":true},
+{"id":"C4","name":"Maya Chen","zone":"West","phone":"+1 416 555 0104","active":false}],
+"shipments":[
+{"id":"PCL-1001","sender":"Northwind Books","receiver":"Ella Moore","city":"London","courier":"C1","status":"Delivered","created":"2026-10-10","history":[["Pending","2026-10-10"],["Picked up","2026-10-10"],["In transit","2026-10-11"],["Delivered","2026-10-12"]]},
+{"id":"PCL-1002","sender":"Brightside Tech","receiver":"Jonas Weber","city":"Berlin","courier":"C2","status":"In transit","created":"2026-10-14","history":[["Pending","2026-10-14"],["Picked up","2026-10-15"],["In transit","2026-10-16"]]},
+{"id":"PCL-1003","sender":"Desert Rose Co.","receiver":"Salma Nasser","city":"Dubai","courier":"C3","status":"Out for delivery","created":"2026-10-15","history":[["Pending","2026-10-15"],["Picked up","2026-10-15"],["In transit","2026-10-16"],["Out for delivery","2026-10-18"]]},
+{"id":"PCL-1004","sender":"Maple Goods","receiver":"Noah Tremblay","city":"Toronto","courier":"C4","status":"Pending","created":"2026-10-17","history":[["Pending","2026-10-17"]]},
+{"id":"PCL-1005","sender":"Casa Verde","receiver":"Lucía Ramos","city":"Madrid","courier":"C2","status":"Picked up","created":"2026-10-17","history":[["Pending","2026-10-17"],["Picked up","2026-10-18"]]},
+{"id":"PCL-1006","sender":"Northwind Books","receiver":"Tom Hughes","city":"London","courier":"C1","status":"Delivered","created":"2026-10-08","history":[["Pending","2026-10-08"],["Picked up","2026-10-08"],["In transit","2026-10-09"],["Delivered","2026-10-10"]]},
+{"id":"PCL-1007","sender":"Brightside Tech","receiver":"Mira Schulz","city":"Berlin","courier":"C2","status":"Cancelled","created":"2026-10-12","history":[["Pending","2026-10-12"],["Cancelled","2026-10-13"]]},
+{"id":"PCL-1008","sender":"Desert Rose Co.","receiver":"Yusuf Karim","city":"Dubai","courier":"C3","status":"In transit","created":"2026-10-16","history":[["Pending","2026-10-16"],["Picked up","2026-10-16"],["In transit","2026-10-17"]]}]}
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>
